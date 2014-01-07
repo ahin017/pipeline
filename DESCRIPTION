@@ -1,0 +1,7 @@
+Package: pipeline
+Title: Modules and glue for making analysis pipelines
+Description:
+Version: 0.1
+Author: Bradley Drayton <brad.drayton@auckland.ac.nz>
+Maintainer: Bradley Drayton <brad.drayton@auckland.ac.nz>
+Licence: GPL-3
