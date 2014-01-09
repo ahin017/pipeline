@@ -1,10 +1,3 @@
-library(XML)
-source("common.R")
-source("read.R")
-source("extract.R")
-source("check.R")
-source("run.R")
-
 m1 <- readModule("module-1.xml")
 checkModule(xmlRoot(m1))
 m2 <- readModule("module-2.xml")
