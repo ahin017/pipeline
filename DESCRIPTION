@@ -2,7 +2,7 @@ Package: pipeline
 Title: Modules and glue for making analysis pipelines
 Description:
 Version: 0.1
-Depends: devtools (>= 1.0), XML
+Depends: devtools (>= 1.0), XML, R (>= 3.0)
 Author: Bradley Drayton <brad.drayton@auckland.ac.nz>
 Maintainer: Bradley Drayton <brad.drayton@auckland.ac.nz>
 License: GPL-3
