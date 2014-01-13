@@ -1,0 +1,10 @@
+<?xml version="1.0?>
+<module name="fileNameIsOECD_AIDS">
+	<platform>R</platform>
+	<source><![CDATA[
+		fileName = "OECD_AIDS.txt"
+	]]></source>
+	<output name="fileName">
+		<format>R character</format>
+	</output>
+</module>

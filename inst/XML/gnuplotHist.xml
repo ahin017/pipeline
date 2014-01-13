@@ -1,0 +1,22 @@
+
+<?xml version="1.0"?>
+<module name="subsetByFromFile">
+	<platform>R</platform>
+	<source><![CDATA[
+		#the generic module needs to find gnuplot 
+		# in command promt: go to the C: and seacrh from there. put the result in R working directory
+		shell(paste0("C: && dir wgnuplot.exe /s /b > ",getwd(),"/wgnuplotsearchresults.txt"))
+		
+		#I need to get the plotscript from somewhere....push to github and download.
+		url = "https://raw.github.com/bradleydrayton/pipeline/master/inst/gnuplot/plotscript.gnu"
+		download.file(url, "plotscript.gnu")
+		
+		# if there is a valid installation, that can be used to run the gnuplot script
+		wgnuplot.exe = readLines("wgnuplotsearchresults.txt", 1)
+		if(!length(wgnuplot.exe)){
+		  print("Please install gnuplot")
+		}else{
+		  shell(paste0(wgnuplot.exe, " plotscript.gnu"))
+		}
+	]]></source>
+</module>

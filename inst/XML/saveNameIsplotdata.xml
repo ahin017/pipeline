@@ -1,0 +1,10 @@
+<?xml version="1.0?>
+<module name="saveNameIsplotdata">
+	<platform>R</platform>
+	<source><![CDATA[
+		saveName = "plotdata.txt"
+	]]></source>
+	<output name="saveName">
+		<format>R character</format>
+	</output>
+</module>

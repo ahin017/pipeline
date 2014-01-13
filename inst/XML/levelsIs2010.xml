@@ -1,0 +1,10 @@
+<?xml version="1.0?>
+<module name="levelsIs2010">
+	<platform>R</platform>
+	<source><![CDATA[
+		levels = "2010"
+	]]></source>
+	<output name="levels">
+		<format>R vector</format>
+	</output>
+</module>

@@ -1,0 +1,14 @@
+<?xml version="1.0?>
+<module name="myRepoToFile">
+	<platform>R</platform>
+	<input name="fileName">
+		<format>R character</format>
+	</input>
+	<source><![CDATA[
+		url = paste0("https://raw.github.com/bradleydrayton/pipeline/master/inst/extdata/", fileName)
+		download.file(url, fileName)
+	]]></source>
+	<output name="data">
+		<format>text file</format>
+	</output>
+</module>
