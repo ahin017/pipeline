@@ -1,22 +1,26 @@
-
 <?xml version="1.0"?>
 <module name="subsetByFromFile">
 	<platform>R</platform>
 	<source><![CDATA[
-		#the generic module needs to find gnuplot 
-		# in command promt: go to the C: and seacrh from there. put the result in R working directory
+		fileConn<-file("testscript.gnu")
+		writeLines(c("set terminal png truecolor",
+					 "set output \"grpimage.png\"",
+					 "set grid",
+					 "set xtic rotate by -90",
+					 "set style data histograms",
+					 "set style fill solid 1.00 border -1",
+					 paste0("plot \"", data$fileName, "\" using 3:xtic(1)")),
+				   fileConn)
+		close(fileConn)
+
 		shell(paste0("C: && dir wgnuplot.exe /s /b > ",getwd(),"/wgnuplotsearchresults.txt"))
-		
-		#I need to get the plotscript from somewhere....push to github and download.
-		url = "https://raw.github.com/bradleydrayton/pipeline/master/inst/gnuplot/plotscript.gnu"
-		download.file(url, "plotscript.gnu")
-		
-		# if there is a valid installation, that can be used to run the gnuplot script
+
 		wgnuplot.exe = readLines("wgnuplotsearchresults.txt", 1)
 		if(!length(wgnuplot.exe)){
 		  print("Please install gnuplot")
 		}else{
-		  shell(paste0(wgnuplot.exe, " plotscript.gnu"))
+		  shell(paste0(wgnuplot.exe, " testscript.gnu"))
 		}
 	]]></source>
 </module>
+

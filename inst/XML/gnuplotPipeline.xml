@@ -1,13 +1,10 @@
-
-
-
-<module ref="fileNameIsOECD_AIDS"/>
-<module ref="myRepoToFile"/>
-
-<module ref="variableIsYear"/>
-<module ref="levelsIs2010"/>
-<module ref="loadNameIsOECD_AIDS"/>
-<module ref="saveNameIsplotdata"/>
-<module ref="subsetByFromFile"/>
-
-<module ref="gnuplotHist"/>
+<?xml version="1.0"?>
+<pipeline xmlns:xi="http://www.w3.org/2003/XInclude">
+<module ref="defineInputs.xml">
+	<module ref="myRepoToFile.xml">
+		<module ref="subsetByFromFile.xml">
+			<module ref="gnuplotHist.xml"/>
+		</module>
+	</module>
+</module>
+</pipeline>

@@ -1,32 +1,22 @@
-
 <?xml version="1.0"?>
 <module name="subsetByFromFile">
 	<platform>R</platform>
-	<input name="loadName">
-		<format>R character</format>
-	</input>
-	<input name="saveName">
-		<format>R character</format>
-	</input>
-	<input name="variable">
-		<format>R character</format>
-	</input>
-	<input name="levels">
-		<format>R vector</format>
+	<input name="data">
+		<format>R list</format>
 	</input>
 	<source><![CDATA[
 		require(plyr)
-		data = read.table(loadName, header = TRUE, sep = " ")
-		if(is.null(levels)){
-			tempdata = ddply(data, variable)
+		tempdata = read.table(data$fileName, header = TRUE, sep = " ")
+		if(is.null(data$levels)){
+			tempdata = ddply(tempdata, data$variable)
 		} else {
-			templist = dlply(data, variable)
-			tempdata = ldply(templist[levels],data.frame)[-1]
+			templist = dlply(tempdata, data$variable)
+			tempdata = ldply(templist[data$levels],data.frame)[-1]
 		}
 
-		write.table(tempdata, saveName, row.names = FALSE)
+		write.table(tempdata, data$fileName, row.names = FALSE)
 	]]></source>
 	<output name="data">
-		<format>text file</format>
+		<format>list</format>
 	</output>
 </module>

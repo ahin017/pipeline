@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<module name="defineInputs">
+	<platform>R</platform>
+	<source><![CDATA[
+		data = list(fileName = "OECD_AIDS.txt",
+					variable = "Year",		
+					levels = "2010")
+	]]></source>
+	<output name="data">
+		<format>R list</format>
+	</output>
+</module>
