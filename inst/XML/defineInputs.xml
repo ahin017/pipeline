@@ -3,7 +3,7 @@
 	<platform>R</platform>
 	<source><![CDATA[
 		data = list(fileName = "OECD_AIDS.rda",
-					variable = "Year",		
+					variable = "year",		
 					levels = "2010")
 	]]></source>
 	<output name="data">
