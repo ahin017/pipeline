@@ -6,7 +6,7 @@
 	</input>
 	<source><![CDATA[
 		require(plyr)
-		tempdata = read.table(data$fileName, header = TRUE, sep = " ")
+		tempdata = load(data$fileName)
 		if(is.null(data$levels)){
 			tempdata = ddply(tempdata, data$variable)
 		} else {
