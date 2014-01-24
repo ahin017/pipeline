@@ -1,8 +1,5 @@
-
-# Execute a pipeline
-
-
-runModule <- function(x) {
+runModule <-
+function(x) {
     src <- sapply(getNodeSet(x, "source"), xmlValue)
     cat(paste("R>", src, "\n"))
     if (length(src) > 0) {
@@ -16,12 +13,4 @@ runModule <- function(x) {
             lapply(modules, runModule)
         }
     }
-}
-
-runPipeline <- function(x) {
-    if (!checkPipeline(x)) {
-        stop("Invalid pipeline")
-    }
-    modules <- getNodeSet(xmlRoot(x), "module")
-    invisible(lapply(modules, runModule))
 }
