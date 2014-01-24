@@ -2,7 +2,7 @@
 <module name="defineInputs">
 	<platform>R</platform>
 	<source><![CDATA[
-		data = list(fileName = "OECD_AIDS.txt",
+		data = list(fileName = "OECD_AIDS.rda",
 					variable = "Year",		
 					levels = "2010")
 	]]></source>

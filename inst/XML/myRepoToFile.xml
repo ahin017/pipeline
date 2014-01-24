@@ -5,7 +5,7 @@
 		<format>R list</format>
 	</input>
 	<source><![CDATA[
-		url = paste0("https://raw.github.com/bradleydrayton/pipeline/master/inst/extdata/", data$fileName)
+		url = paste0("https://raw.github.com/bradleydrayton/pipeline/master/data/", data$fileName)
 		download.file(url, data$fileName)
 	]]></source>
 	<output name="data">
