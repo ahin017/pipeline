@@ -1,8 +1,8 @@
-\name{pipeline2-package}
-\alias{pipeline2-package}
+\name{pipeline-package}
+\alias{pipeline-package}
 \docType{package}
 \title{
-~~ package title ~~
+pipeline
 }
 \description{
 ~~ A concise (1-5 lines) description of the package ~~
