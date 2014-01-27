@@ -6,15 +6,18 @@
 	</input>
 	<source><![CDATA[
 		require(plyr)
-		tempdata = load(data$fileName)
+		dataName = load(data$fileName)
+		dataName = as.name(dataName)
 		if(is.null(data$levels)){
-			tempdata = ddply(tempdata, data$variable)
+		  tempData = eval(bquote(ddply(.(dataName), data$variable)))
 		} else {
-			templist = dlply(tempdata, data$variable)
-			tempdata = ldply(templist[data$levels],data.frame)[-1]
+		  tempList = eval(bquote(dlply(.(dataName), data$variable)))
+		  tempData = ldply(tempList[data$levels],data.frame)[-1]
 		}
 
-		write.table(tempdata, data$fileName, row.names = FALSE)
+		write.table(tempData, "tempData.txt", sep = " ", row.names = FALSE)
+
+		data["tempData"] = "tempData.txt"
 	]]></source>
 	<output name="data">
 		<format>list</format>
