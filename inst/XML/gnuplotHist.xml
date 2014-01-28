@@ -13,7 +13,7 @@
 				   fileConn)
 		close(fileConn)
 
-		shell(paste0("C: && dir wgnuplot.exe /s /b > ",getwd(),"/wgnuplotsearchresults.txt"))
+		shell(paste0("C: && cd/ && dir wgnuplot.exe /s /b > ",getwd(),"/wgnuplotsearchresults.txt"))
 
 		wgnuplot.exe = readLines("wgnuplotsearchresults.txt", 1)
 		if(!length(wgnuplot.exe)){
